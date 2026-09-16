@@ -10,6 +10,8 @@ except Exception:  # pragma: no cover
     load_dotenv = None
 
 BASE_DIR = Path(__file__).resolve().parent
+INSTANCE_DIR = BASE_DIR / "instance"
+INSTANCE_DIR.mkdir(parents=True, exist_ok=True)
 
 if load_dotenv is not None:
     load_dotenv(BASE_DIR / ".env")
