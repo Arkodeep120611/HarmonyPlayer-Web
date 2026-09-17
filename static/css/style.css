@@ -53,6 +53,7 @@ img { max-width: 100%; display: block; }
 }
 .brand { display: flex; gap: 14px; align-items: center; }
 .brand-mark,
+.brand-mark-img,
 .artwork {
   width: 54px;
   height: 54px;
@@ -63,6 +64,7 @@ img { max-width: 100%; display: block; }
   color: white;
   font-weight: 800;
   box-shadow: var(--shadow);
+  object-fit: cover;
 }
 .brand-name, .topbar-title, h1, h2, h3 { margin: 0; }
 .brand-tagline, .eyebrow, .sidebar-label, .stat-label, .player-label, .control-label, .field-note, .auth-note, .auth-copy p, .page-header p, .hero p, .card p, .sidebar-username, .definition-list dd { color: var(--muted); }
@@ -190,6 +192,7 @@ img { max-width: 100%; display: block; }
 .artwork span { position: relative; z-index: 1; font-weight: 800; letter-spacing: 0.08em; }
 .artwork-large { width: 160px; height: 160px; border-radius: 34px; font-size: 2rem; }
 .artwork-small { width: 64px; height: 64px; border-radius: 20px; }
+.hero-logo { width: 160px; height: 160px; border-radius: 34px; box-shadow: var(--shadow); object-fit: contain; padding: 8px; }
 .song-meta, .card-meta { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .song-title, .card h3, .player-title { font-size: 1.05rem; font-weight: 700; }
 .song-artist, .song-album { color: var(--muted); font-size: 0.95rem; }

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>{{ page_title or "HarmonyPlayer" }}</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <script>
     window.HarmonyPlayer = window.HarmonyPlayer || {};
@@ -22,7 +23,7 @@
   <div class="app-layout">
     <aside class="sidebar" id="sidebar">
       <div class="brand">
-        <div class="brand-mark">H</div>
+        <img src="{{ url_for('static', filename='favicon.png') }}" alt="HarmonyPlayer" class="brand-mark-img">
         <div>
           <div class="brand-name">HarmonyPlayer</div>
           <div class="brand-tagline">Your music. Your way.</div>

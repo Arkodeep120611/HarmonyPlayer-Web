@@ -1,0 +1,62 @@
+[1mdiff --git a/static/css/style.css b/static/css/style.css[m
+[1mindex 1b4df95..81af4b7 100644[m
+[1m--- a/static/css/style.css[m
+[1m+++ b/static/css/style.css[m
+[36m@@ -53,6 +53,7 @@[m [mimg { max-width: 100%; display: block; }[m
+ }[m
+ .brand { display: flex; gap: 14px; align-items: center; }[m
+ .brand-mark,[m
+[32m+[m[32m.brand-mark-img,[m
+ .artwork {[m
+   width: 54px;[m
+   height: 54px;[m
+[36m@@ -63,6 +64,7 @@[m [mimg { max-width: 100%; display: block; }[m
+   color: white;[m
+   font-weight: 800;[m
+   box-shadow: var(--shadow);[m
+[32m+[m[32m  object-fit: cover;[m
+ }[m
+ .brand-name, .topbar-title, h1, h2, h3 { margin: 0; }[m
+ .brand-tagline, .eyebrow, .sidebar-label, .stat-label, .player-label, .control-label, .field-note, .auth-note, .auth-copy p, .page-header p, .hero p, .card p, .sidebar-username, .definition-list dd { color: var(--muted); }[m
+[36m@@ -190,6 +192,7 @@[m [mimg { max-width: 100%; display: block; }[m
+ .artwork span { position: relative; z-index: 1; font-weight: 800; letter-spacing: 0.08em; }[m
+ .artwork-large { width: 160px; height: 160px; border-radius: 34px; font-size: 2rem; }[m
+ .artwork-small { width: 64px; height: 64px; border-radius: 20px; }[m
+[32m+[m[32m.hero-logo { width: 160px; height: 160px; border-radius: 34px; box-shadow: var(--shadow); object-fit: contain; padding: 8px; }[m
+ .song-meta, .card-meta { display: flex; flex-direction: column; gap: 4px; min-width: 0; }[m
+ .song-title, .card h3, .player-title { font-size: 1.05rem; font-weight: 700; }[m
+ .song-artist, .song-album { color: var(--muted); font-size: 0.95rem; }[m
+[1mdiff --git a/templates/base.html b/templates/base.html[m
+[1mindex b55ffb6..75b5ecb 100644[m
+[1m--- a/templates/base.html[m
+[1m+++ b/templates/base.html[m
+[36m@@ -5,6 +5,7 @@[m
+   <meta name="viewport" content="width=device-width, initial-scale=1">[m
+   <meta name="csrf-token" content="{{ csrf_token() }}">[m
+   <title>{{ page_title or "HarmonyPlayer" }}</title>[m
+[32m+[m[32m  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">[m
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">[m
+   <script>[m
+     window.HarmonyPlayer = window.HarmonyPlayer || {};[m
+[36m@@ -22,7 +23,7 @@[m
+   <div class="app-layout">[m
+     <aside class="sidebar" id="sidebar">[m
+       <div class="brand">[m
+[31m-        <div class="brand-mark">H</div>[m
+[32m+[m[32m        <img src="{{ url_for('static', filename='favicon.png') }}" alt="HarmonyPlayer" class="brand-mark-img">[m
+         <div>[m
+           <div class="brand-name">HarmonyPlayer</div>[m
+           <div class="brand-tagline">Your music. Your way.</div>[m
+[1mdiff --git a/templates/index.html b/templates/index.html[m
+[1mindex d0cc031..b13b049 100644[m
+[1m--- a/templates/index.html[m
+[1m+++ b/templates/index.html[m
+[36m@@ -13,7 +13,7 @@[m
+   </div>[m
+   <div class="hero-panel">[m
+     <div class="hero-art">[m
+[31m-      <div class="artwork artwork-large"><span>HP</span></div>[m
+[32m+[m[32m      <img src="{{ url_for('static', filename='logo-cover.png') }}" alt="HarmonyPlayer logo" class="hero-logo">[m
+     </div>[m
+     <ul class="feature-list">[m
+       <li>Secure uploads</li>[m
