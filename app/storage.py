@@ -23,7 +23,7 @@ def _get_b2_client():
         endpoint_url=endpoint,
         aws_access_key_id=key_id,
         aws_secret_access_key=application_key,
-        region_name="us-east-1",
+        region_name="eu-central-003"
     )
 
 
